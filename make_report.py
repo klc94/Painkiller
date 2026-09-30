@@ -9,7 +9,7 @@ def evid(L):
         q = r["quote_under_25_words"].replace('"', '“', 1) if False else r["quote_under_25_words"]
         out.append(f'- "{q}" (r/{r["subreddit"]}, {r["source"]}, score {r["score"]}; {r["industry"]}) [link]({r["url"]})')
     return "\n".join(out)
-GATE = {"A": "pass, with HIPAA/collections conditions", "C": "pass", "B": "**conditional**: fails if it collects debts",
+GATE = {"M": "pass, with retaliation/verification caveats", "N": "**FAIL: obsolescence**", "A": "pass, with HIPAA/collections conditions", "C": "pass", "B": "**conditional**: fails if it collects debts",
         "G": "pass (avoid processor residuals)", "L": "pass, but no Reddit voice", "J": "pass, thin evidence",
         "F": "pass, thin evidence", "K": "pass, thin evidence", "H": "pass, no evidence", "I": "pass, no evidence",
         "D": "**FAIL: obsolescence**", "E": "**FAIL: crowded/AI-native, and the category you asked me not to anchor on**"}
@@ -19,7 +19,7 @@ tbl = ["| Rank | Cluster | Score | Gate | Clients for $1M | Share of reachable m
 for i, n in enumerate(names, 1):
     m = B.MATH[n[0]]; c = round(1e6 / m[0])
     tbl.append(f"| {i} | {n} | {tot(n)} | {GATE[n[0]]} | {c:,} | {100*c/m[2]:.2f}% |")
-s = open("report_template.md").read()
+s = open("report_template.md").read().replace("<<NROWS>>", str(len(rows)))
 s = s.replace("<<RANKING>>", "\n".join(tbl))
 for n in names:
     L = n[0]

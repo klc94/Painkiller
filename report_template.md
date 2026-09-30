@@ -7,16 +7,15 @@
 - The archive stores scores and comment counts as of about when each post was ingested, not final values. Ranking by "top of the year" is approximate.
 - It cannot sort by top or run your 15 phrase searches reliably (server-side keyword search timed out). I pulled **every post from the past year** per subreddit and matched phrases locally.
 
-**What was pulled:** about 384,000 posts across 24 subreddits that returned data. Skipped or incomplete:
-- **Not pulled:** r/Construction, r/realtors, r/propertymanagement.
-- **Partial:** r/landscaping.
-- **Returned zero posts:** r/trucking, r/veterinaryprofessionals.
+**What was pulled:** about 476,000 posts across 33 subreddits that returned data. Skipped or incomplete:
+- **Pulled in a second pass at your request** ("other industries"): r/Construction, r/realtors, r/propertymanagement, r/landscaping, r/Truckers, r/OwnerOperators, r/FreightBrokers (partial, about 4,400 posts), r/Veterinary, r/veterinarians and r/VetTech.
+- **Returned zero posts:** r/trucking and r/veterinaryprofessionals.
 - **Excluded at your request:** r/AmazonSeller and r/FulfillmentByAmazon (pulled, then not analysed).
 - **Added at your request** (law and medical offices): r/LawFirm, r/Lawyertalk, r/physicaltherapy, r/Chiropractic, r/optometry and r/MedicalCoding (the last two were pulled but not analysed in depth). r/PrivatePractice turned out to be a TV-show subreddit full of IPTV spam, and r/medicalbilling was empty, so both were dropped.
 
-**Comment threads:** you asked for every thread with 20+ comments. I pulled **46 hand-picked threads** (the evidence posts for the finalist clusters), not all of them. You told me not to let this take forever.
+**Comment threads:** you asked for every thread with 20+ comments. I pulled **64 hand-picked threads** (the evidence posts for the finalist clusters), not all of them. You told me not to let this take forever.
 
-**How I found the evidence.** Keyword counts were badly polluted. For example, "interchange" matched "interchangeable", "square fees" matched "square feet", "mdf" matched wood, and "underpaid" matched salary threads. So **the counts in the ranking are not trusted measurements**. The evidence is the set of posts I actually read and judged relevant (`pain_points.csv`, 59 rows). Keyword matches I did not read are not in it.
+**How I found the evidence.** Keyword counts were badly polluted. For example, "interchange" matched "interchangeable", "square fees" matched "square feet", "mdf" matched wood, and "underpaid" matched salary threads. So **the counts in the ranking are not trusted measurements**. The evidence is the set of posts I actually read and judged relevant (`pain_points.csv`, <<NROWS>> rows). Keyword matches I did not read are not in it.
 
 **Evidence versus assumptions.** Every number in this report is labelled:
 - **REDDIT** means a real post or comment.
@@ -37,11 +36,11 @@ Totals are out of 100 (19 criteria, with outreach counted double). **Gate** mean
 
 <<RANKING>>
 
-**Only four clusters both pass the gates and have at least five real evidence quotes: A, C, B and G.** A fifth would be padding. F (vendor insurance certificates) is the next-best and has three quotes. It is on a watchlist at the end.
+**Five clusters both pass the gates and have at least five real evidence quotes: A, M, C, B and G** (M was added in the second pass). A sixth would be padding. F (vendor insurance certificates) is next-best with three quotes and sits on a watchlist at the end.
 
 ---
 
-## 2. The top four
+## 2. The top five
 
 ### A. Small-dollar payer denials and underpayments for independent clinics (score <<SCORE_A>>/100)
 
@@ -96,6 +95,58 @@ Totals are out of 100 (19 criteria, with outreach counted double). **Gate** mean
 **Competitors (WEB and REDDIT):** medical billing companies (about 4% of collections in one comment), revenue-cycle software, and denial-management vendors. The Reddit poster above is one small competitor. Whether small practices are underserved in the tail is plausible and **unproven**.
 
 **Biggest risk:** trust and compliance. Clinics must hand over patient-related data to a new vendor, the top reply on the one relevant post is a HIPAA objection, and real recovery may be much smaller than assumed.
+
+---
+
+### M. Detention and accessorial claim filing for small trucking carriers (score <<SCORE_M>>/100)
+
+**The problem, in one sentence:** small carriers and owner-operators sit at docks for hours, and many never file or collect the detention and layover pay they are owed, because chasing a broker for $200 is a hassle.
+
+**Who has it:** owner-operators and small fleets (roughly 1 to 25 trucks). WEB: about 91.5% of carriers run 10 trucks or fewer.
+
+**Evidence (REDDIT):**
+
+<<EVID M>>
+
+**What this proves and does not prove.**
+- **Proves:** detention non-payment is a constant complaint. One owner-operator post estimates an 8-truck fleet left **$21,525 unfiled** on 287 hours at $75 an hour, and one commenter says "most people would pay a fee if you were able to recover this money for them."
+- **Does not prove much on its own:** the strongest owner-side posts have low engagement (scores 6 to 34), and several read like idea-validation posts by people building something similar ("I'm an engineer looking into...", "Change my mind"). The larger r/Truckers threads are mostly **company drivers**, whose employer (not they) is owed the money.
+- **Counter-evidence (REDDIT comments):** filing against a broker's bond gets you blacklisted ("they DNU"), and every broker and shipper handles detention differently, and half the rate confirmations don't mention it. Broker-side posts show many claims are judgment calls.
+- **WEB (unverified, vendor-heavy sources):** over 90% of carriers bill detention but fewer than half get paid; brokers often require claims within 24 to 48 hours. **I verified one Reddit claim:** federal broker financial-responsibility rules took full effect on January 16, 2026 ($75,000 in acceptable assets at all times, 7 business days to replenish). Whether that has actually changed broker payment behavior is unproven.
+
+**Hard requirements:**
+- **License:** none for filing claims in the carrier's name, and this is not brokering. **Verify state rules on commercial-debt collection before doing any escalation.**
+- **Margin:** about 65 to 70% (ASSUMPTION). Exceptions and per-broker variance eat into this.
+- **Obsolescence:** medium. ELD and dispatch vendors already sell detention tracking (WEB: DockClaim, Detention Source, Toro TMS, McLeod, Trimble). Brokers and shippers must still be chased, which software doesn't do.
+
+**Scores (1 to 5):** painkiller <<S M 1>>, frequency <<S M 2>>, willingness to pay <<S M 3>>, AI resistance <<S M 4>>, delivery automation <<S M 5>>, outreach automation <<S M 6>> (double), massive pain <<S M 7>>, purchasing power <<S M 8>>, easy to target <<S M 9>>, growing <<S M 10>>, dream outcome <<S M 11>>, provable upfront <<S M 12>>, speed <<S M 13>>, low client effort <<S M 14>>, Grand Slam potential <<S M 15>>, recurring <<S M 16>>, LTV:CAC <<S M 17>>, margin <<S M 18>>, ads and mail reach <<S M 19>>.
+
+**$1M math:**
+- **Revenue per client:** ASSUMPTION $2,400 a year (a 5-truck carrier with about $8,000 a year unclaimed, 30% fee).
+- **Clients needed:** about 417.
+- **Reachable market:** WEB says 2.12M registered motor carriers, but that includes private fleets. **My 500,000 figure for small for-hire carriers is an unverified assumption**, so the 0.08% share needed is soft.
+- **Concern:** purchasing power is low, and carriers who fear retaliation may not file even when it's free.
+
+**How delivery works:**
+- **Trigger:** an ELD geofence shows arrival, and departure after the free time has passed.
+- **Access needed:** read access to the carrier's ELD or dispatch system, and the rate confirmation (usually an email attachment).
+- **Automatic:** compute detention against the rate confirmation's terms, assemble the claim (GPS timestamps, bill of lading photo, emails), send it to the broker inside their window, follow up, and report.
+- **Still needs a person:** rate confirmations silent on detention, disputes, bond-claim escalation (a decision the carrier must make because of retaliation), and onboarding to different ELD systems.
+- **Automation estimate:** about 60 to 65% (ASSUMPTION), lower than clinics because of per-broker variance.
+
+**How you'd find and reach prospects automatically:**
+- **Lists:** the federal motor carrier census is public and (per the search results) downloadable, with carrier name, address, phone and fleet size. Filter by fleet size and recent inspections. Verify contact fields before relying on it.
+- **Ads and mail:** carriers have physical addresses, so direct mail is strong, and trucking-specific channels and job-title ads work. Quality caveat: many registrations are inactive.
+
+**Draft Grand Slam Offer:**
+- **Offer:** "Free audit of your last 90 days of ELD logs: how many detention hours went unclaimed."
+- **Price:** 25% of detention actually collected. No monthly fee.
+- **Guarantee:** pay nothing unless money is collected, and cancel any time.
+- **Bonuses:** a broker-by-broker payment-behavior scorecard and a one-page rate-confirmation checklist to negotiate detention terms up front.
+
+**Why they'd pay even though detention software exists.** ASSUMPTION: software records the time but does not persuade a broker or handle exceptions, and small carriers don't have staff to chase. Nothing in the data shows carriers buying that service today.
+
+**Biggest risk:** retaliation (carriers fear being blacklisted), contract ambiguity, and low purchasing power, plus the chance that the supporting posts are builders seeding their own research.
 
 ---
 
@@ -234,6 +285,17 @@ Totals are out of 100 (19 criteria, with outreach counted double). **Gate** mean
 
 ---
 
+## 2b. Other industries you asked me to add (second pass)
+
+Findings from Construction, realtors, property management, landscaping, trucking and veterinary:
+
+- **Trucking gave one new cluster (M above).** It has the best public-list reach of anything besides clinics.
+- **Construction and contractors** produced the unbilled-extras cluster (N, rejected) and reinforced B (late payment).
+- **Property management, realtors, veterinary and landscaping** produced nothing new that passes the gates (see the rejected list).
+- **The user-suggested law and medical offices** were covered in the first pass: law firms have late-payment (B) and billing-hygiene pain (D, rejected), and clinics have the denial cluster (A).
+
+---
+
 ## 3. Comparison against your six existing candidates
 
 | Candidate | Reddit evidence | Score | Verdict |
@@ -263,13 +325,18 @@ Totals are out of 100 (19 criteria, with outreach counted double). **Gate** mean
 | Government contract paperwork | Noisy and thin. |
 | Dental insurance fee schedules | The anger is real but it is about low contracted rates, which are not recoverable money. |
 | Trucking (detention, broker pay) | The archive returned no posts for r/trucking, so I could not assess it. |
+| N. Unbilled extras / change orders (contractors) | Scores <<SCORE_N>>, but **fails obsolescence** (contractor software already ships change orders) and the top comment's fix is simply to raise the estimate. The best post, a contractor who gave away about $12,000 a year in extras, is a real pain but a behavior problem. |
+| Property management (rent collection, evictions) | Late rent is the top complaint, but collecting rent and evictions are legal/licensed work. |
+| Realtors | Complaints were mostly about time-wasting clients, safety and commission splits, not a recoverable money leak. |
+| Veterinary | Very few business-owner posts; the clinic posts were mostly clinical or staff topics. |
+| Landscaping | Mostly project photos; the payment complaints duplicate cluster B. |
 | Amazon FBA and seller reimbursements | Excluded at your request. |
 
 ---
 
 ## 5. Recommendation
 
-**Pursue A (small-dollar payer denial and underpayment recovery for independent clinics) as the first thing to validate.** It scores highest and passes the hard requirements. It has the best fit for ads and direct mail, contingency pricing that removes the client's risk, and a market where you need only about 0.25% of reachable practices. **But the Reddit evidence for it is moderate, not strong**: real denial pain and real payments to billing companies, with the key cost math coming from a competitor. Treat it as the best hypothesis, not a proven idea. If it fails the test below, move to C.
+**Pursue A (small-dollar payer denial and underpayment recovery for independent clinics) as the first thing to validate.** It scores highest and passes the hard requirements. It has the best fit for ads and direct mail, contingency pricing that removes the client's risk, and a market where you need only about 0.25% of reachable practices. **But the Reddit evidence for it is moderate, not strong**: real denial pain and real payments to billing companies, with the key cost math coming from a competitor. Treat it as the best hypothesis, not a proven idea. If it fails the test below, or the HIPAA cost in step 2 is prohibitive, move to **M (trucking detention)**, which is cheaper to test and has no patient-privacy burden but weaker evidence, or to C.
 
 ### First three things to do this week
 
@@ -282,8 +349,8 @@ Totals are out of 100 (19 criteria, with outreach counted double). **Gate** mean
 ## 6. Files
 
 - `painkiller_report.md` (this report)
-- `pain_points.csv`: 59 reviewed evidence rows. The dollar and time impact column is auto-extracted from nearby text and sometimes picks up unrelated numbers, so check it against the quote.
-- `scores.csv`: all 12 clusters with 19 scores, $1M math and gate notes.
+- `pain_points.csv`: <<NROWS>> reviewed evidence rows. The dollar and time impact column is auto-extracted from nearby text and sometimes picks up unrelated numbers, so check it against the quote.
+- `scores.csv`: all 14 clusters with 19 scores, $1M math and gate notes.
 - `painkiller_workbook.xlsx`: scores (formulas recalculate), $1M math (editable assumptions) and pain points.
 - `scrape_reddit.py`, `pull_archive.py`, `analyze_posts.py`, `clusters.py`, `build_outputs.py`: the data-gathering scripts. You said you don't need a tool, so these are just how the data was collected.
 
