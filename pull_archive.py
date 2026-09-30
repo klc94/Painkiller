@@ -44,7 +44,7 @@ def get(path, params):
 
 
 def pull_posts(subs=None):
-    since = int(time.time()) - 365 * 86400
+    since = int(time.time()) - int(os.environ.get("DAYS", "365")) * 86400
     for sub in (subs or SUBS):
         d = os.path.join(OUT, sub)
         os.makedirs(d, exist_ok=True)
