@@ -104,3 +104,31 @@ Specific-person and love posts (~2,300, low comments per post), beginner "where 
 - **Neither is proven.** Reddit shows pain and demand for resources. It does not show how many people will *pay*, or your ad costs. Only a small test tells you that.
 
 **Cheap test (about a week, under $200 of ad spend, ASSUMPTION):** build a one-page free checklist for the chosen angle, run $10 a day on two long-tail subreddits, and measure cost per email signup. If signups cost less than about $3, build the ebook. If more, change the angle.
+
+---
+
+## 6. Trigger-moment "emergency kits": more ideas
+
+**Idea:** sell a low-price ($29 to $99, ASSUMPTION), instant, specific kit at the moment something just happened. Use it both as a first product and as a way to find who will pay for the bigger service ideas in the main report.
+**Counts are title-keyword matches across ~650,000 posts (Amazon excluded), so they are approximate floors.**
+
+| # | Kit | Trigger | Buyer | Evidence (REDDIT) | Main risk |
+|---|---|---|---|---|---|
+| 1 | **Chargeback response kit** (evidence checklist, rebuttal templates) | A chargeback is filed | Small online merchants | ~250 trigger posts (ecommerce 111, smallbusiness 99), e.g. [seven chargebacks in a day](https://www.reddit.com/r/ecommerce/comments/1qci3a4/) | Processors are adding native tools; tiny buyers |
+| 2 | **In-law and family boundary scripts** | Conflict with a relative over a baby or child | Parents | ~840 title posts, ~23,800 comments; [bed-sharing, MIL disagrees, how to respond?](https://www.reddit.com/r/beyondthebump/comments/1uemos6/) (73), [how to tell MIL she can no longer take 4yo swimming](https://www.reddit.com/r/Parenting/comments/1uwmbua/) (81), [in-laws and baby's first Christmas](https://www.reddit.com/r/Parenting/comments/1vqq3xi/) (121) | Free Reddit advice and free AI |
+| 3 | **"Telling the kids" scripts** (divorce, custody, moving out, a death) by age | A life event | Parents | [Gaining full custody, what do I tell my kids?](https://www.reddit.com/r/Parenting/comments/1vqvhmq/) (261), [How do I tell my sons that I'm not going to be living with them anymore?](https://www.reddit.com/r/Parenting/comments/1tkb457/) (163), [telling a 5-year-old about a cousin's death](https://www.reddit.com/r/Parenting/comments/1uyo1x8/) (96) | Very sensitive: needs credentialed review, no medical or legal advice, and crisis-resource links |
+| 4 | **Scope-creep and change-order kit** (templates, "zero-dollar change order") | Client asks for extras or says "we agreed" | Freelancers, contractors | [Lost $2,300 to scope creep on one project](https://www.reddit.com/r/freelance/comments/1ozc3zq/), [the $12,000 "Nice Guy Tax"](https://www.reddit.com/r/Construction/comments/1qnua1c/), ["swear we talked about this"](https://www.reddit.com/r/smallbusiness/comments/1oecgez/) (78) | Crowded and easily replaced by AI; the top comment's fix is simply to raise prices |
+| 5 | **Bad or fake review response and dispute kit** | A new one-star review | Local business owners | ~340 trigger posts (smallbusiness 187), e.g. [fake Google review destroying my cafe](https://www.reddit.com/r/smallbusiness/comments/1rpstpq/) (98), [one unfair one-star review is eating me alive](https://www.reddit.com/r/smallbusiness/comments/1w1elki/) (119) | Scammy "review removal" sellers; AI writes replies free; platform decides outcomes |
+| 6 | **Late-payer escalation pack** (reminder sequence, final notice) | Invoice 30+ days late | Contractors, freelancers | ~410 trigger posts | Demand letters drift toward legal advice; check state rules |
+| 7 | **ADA website demand-letter first-response guide** | A letter arrives | Small business owners | ~55 posts; [getting hit by accessibility lawsuit sharks](https://www.reddit.com/r/smallbusiness/comments/1rufzw7/) (65), [friend got an ADA demand letter](https://www.reddit.com/r/smallbusiness/comments/1pc5ix4/) (292) | **High:** legal territory. Consider only a factual "what this is" guide, or skip |
+| 8 | **Layoff and severance checklist** | Job loss | Laid-off professionals | ~500 posts (Accounting 186); [I got laid off](https://www.reddit.com/r/Accounting/comments/1or56om/) (252) | Crowded; AI resume tools; legal-adjacent |
+
+**Not recommended:** therapist board-complaint defense ([one 100-comment thread](https://www.reddit.com/r/therapists/comments/1vgnq5b/)) is legal defense work. Trademark-takedown appeals had only one relevant thread.
+
+**My ranking for a faceless first test (judgment, not measured):**
+1. In-law and family boundary scripts (largest parent volume, exact-script format).
+2. Chargeback response kit (clear trigger, also validates idea C from the main report).
+3. "Telling the kids" scripts (strong urgency, but needs careful sourcing and review).
+4. Bad-review response kit, only if it stays honest and avoids removal promises.
+
+**Two things to keep in mind:** the counts show *how often* the moment occurs, not that people will pay $29 at that moment. And impulse buyers refund more, so a real guarantee and a clearly described product matter.
