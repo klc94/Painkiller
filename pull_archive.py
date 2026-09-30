@@ -14,7 +14,7 @@ import json, os, sys, time, urllib.parse, urllib.request, urllib.error
 
 BASE = "https://arctic-shift.photon-reddit.com"
 OUT = "reddit_raw"
-SUBS = ["smallbusiness", "Entrepreneur", "sweatystartup", "Contractor", "HVAC",
+SUBS = ["LawFirm", "Lawyertalk", "medicalbilling", "PracticeManagement", "privatepractice", "smallbusiness", "Entrepreneur", "sweatystartup", "Contractor", "HVAC",
         "electricians", "Plumbing", "restaurateur", "KitchenConfidential",
         "ecommerce", "FulfillmentByAmazon", "AmazonSeller", "landscaping",
         "Construction", "msp", "dentistry", "realtors", "propertymanagement",
